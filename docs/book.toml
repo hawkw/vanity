@@ -1,0 +1,13 @@
+[book]
+title = "Vanity Design Documentation"
+authors = ["Eliza Weisman"]
+language = "en"
+multilingual = false
+src = "src"
+
+[build]
+build-dir = "book"
+
+[output.html]
+git-repository-url = "https://github.com/hawkw/vanity"
+edit-url-template = "https://github.com/hawkw/vanity/edit/main/docs/{path}"
