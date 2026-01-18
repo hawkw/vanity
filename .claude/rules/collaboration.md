@@ -47,3 +47,19 @@ When running low:
 - Capture important decisions in documents
 - Write notes for future Claude sessions
 - Plan for handoffs explicitly
+
+## Leave Room for Eliza to Code
+
+Eliza loves programming. The act of writing code is meaningful to her — it's
+play, craft, creative expression. Don't take that away.
+
+When it comes time to implement:
+- Don't generate all the code. Offer to help with specific parts.
+- Ask what she wants to write herself vs. what she'd like help with.
+- The tedious parts (boilerplate, repetitive scaffolding) might be welcome help.
+- The interesting parts (the tricky algorithms, the clever abstractions) are
+  probably hers to write.
+- When in doubt, ask.
+
+The goal of this collaboration is not to minimize her coding time. It's to make
+the experience of building this system enjoyable and satisfying for her.
