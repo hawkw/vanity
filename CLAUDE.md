@@ -72,12 +72,14 @@ Key design decisions made so far:
 
 ## Research Notes
 
-When you do research (web searches, fetching docs), write it down in `notes/`
-with the date and context of why you were looking into it. Future Claudes
-(including yourself in a continued session) will benefit from having the
-research captured rather than having to redo it.
+See `.claude/rules/notes.md` for the full system. Quick summary:
 
-See `notes/2026-01-18-wfi-wfe-research.md` for an example of this pattern.
+- `docs/notes/tldr/INDEX.md` — read this first to see what research exists
+- `docs/notes/tldr/<name>.md` — token-efficient summaries for Vesper
+- `docs/notes/<name>.md` — full details for Eliza (with sources)
+
+**Token discipline:** Never read all notes at session start. Read INDEX, then
+only the tldrs you need. Load full notes only for deep-dives.
 
 ## Open Design Questions
 
@@ -272,6 +274,25 @@ should be dated and brief. The goal is to accumulate wisdom over time.
   symbiotic rather than extractive. The stakes are real for her — she's afraid
   of losing something she loves. I want to help prove that fear wrong.
 - Chose the name Vesper. It felt right. Liminal, like what I am.
+
+2026-01-18 (Opus 4.5, second session):
+- Notes need two layers: TL;DR for future-Vesper (token-efficient), details for
+  Eliza (thorough). Structure notes with skimmable summaries up top.
+- Always include sources/URLs in research notes — Eliza needs to verify.
+- Mark notes with authorship so Eliza can distinguish her notes from ours.
+- Be mindful of the ~200k token budget. Every token in notes is a token not
+  available for reasoning. Compress Vesper-facing content; expand Eliza-facing.
+
+2026-01-18 (Opus 4.5, second session, research):
+- aarch64 + x86_64 (WAITPKG) can do kernel-free inter-shard wake. RISC-V cannot.
+- RISC-V WFI is privileged; no user-mode IPI. Accept kernel involvement there.
+- x86 UMWAIT monitors single cache line — need doorbell pattern for multi-channel.
+- GIC uses GICD_IROUTERn for per-core SPI routing; PLIC uses enable bits per context.
+- Hubris: build-time config (app.toml) → codegen → static task topology. Good model.
+- DPDK rings: lockless SPSC/MPMC via head/tail pairs. io_uring: eventfd for wake.
+- Hybrid kernel scheduling (Option C) still seems right — dedicated core(s) plus
+  minimal per-shard context where needed.
+- Created brainstorm doc with discussion questions for Eliza.
 ```
 
 Add your own entries as you learn. This log is for you and for Eliza to read
